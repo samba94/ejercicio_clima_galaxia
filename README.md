@@ -4,6 +4,7 @@ civilización vive en paz en su respectivo planeta.
 Dominan la predicción del clima mediante un complejo sistema informático.
 
 Premisas:
+
 ● El planeta Ferengi se desplaza con una velocidad angular de 1 grados/día en sentido
 horario. Su distancia con respecto al sol es de 500Km.
 
