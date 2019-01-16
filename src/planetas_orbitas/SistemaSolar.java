@@ -50,7 +50,7 @@ public class SistemaSolar {
 		return sum;
 	}
 	
-	public boolean enLinea(double ang1, double ang2){
+	public boolean enLinea(double ang1, double ang2){ //Usando el puntosAlineados de la clase Geometria con coordenadas, funciona tambien4
 		boolean ret = false;		
 		
 		if(ang1<0){
@@ -90,6 +90,16 @@ public class SistemaSolar {
 		return ret;
 	}
 	
+	public boolean enSequiaV2(){
+		Geometria geom = new Geometria();
+		Punto origen = new Punto(0,0);
+		Punto a = geom.generarCoordenadas(planeta1.getDistancia(), planeta1.getAngulo_actual());
+		Punto b = geom.generarCoordenadas(planeta2.getDistancia(), planeta2.getAngulo_actual());
+		Punto c = geom.generarCoordenadas(planeta3.getDistancia(), planeta3.getAngulo_actual());
+		
+		return geom.puntosAlineados(a, b, c) && geom.puntosAlineados(origen, a, b);
+	}
+	
 	public boolean esLluvia(){
 		boolean ret = false;
 		int a1 = planeta1.getAngulo_actual();
@@ -116,14 +126,14 @@ public class SistemaSolar {
 		return geom.perimetroTriangulo(a, b, c);
 	}
 	
-	public boolean alineadosSinSol(){
+	public boolean esOptimo(){
 		Geometria geom = new Geometria();
 		Punto origen = new Punto(0,0);
 		Punto a = geom.generarCoordenadas(planeta1.getDistancia(), planeta1.getAngulo_actual());
 		Punto b = geom.generarCoordenadas(planeta2.getDistancia(), planeta2.getAngulo_actual());
 		Punto c = geom.generarCoordenadas(planeta3.getDistancia(), planeta3.getAngulo_actual());
 		
-		return geom.puntosAlineados(a, b, c) && geom.puntosAlineados(origen, a, b);		
+		return geom.puntosAlineados(a, b, c) && !geom.puntosAlineados(origen, a, b);		
 	}
 	
 }

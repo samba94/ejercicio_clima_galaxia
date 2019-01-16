@@ -30,7 +30,7 @@ public class Geometria {
 		double d2 = distanciaEntre2Puntos(b, c);
 		double d3 = distanciaEntre2Puntos(c, a);
 		
-		return d1 + d2 + d3;
+		return Math.round(d1 + d2 + d3);
 	}
 
 	public boolean puntosAlineados(Punto a, Punto b, Punto c) {

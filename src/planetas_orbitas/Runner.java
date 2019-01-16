@@ -36,7 +36,7 @@ public class Runner {
 				}
 			}
 			
-			if(solar.alineadosSinSol()){
+			if(solar.esOptimo()){
 				optimas++;
 			}
 			
